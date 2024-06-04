@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Solar System</title>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:300'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./sheets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class='solar-syst'>
+      <div class='sun'></div>
+      <div class='mercury'></div>
+      <div class='venus'></div>
+      <div class='earth'></div>
+      <div class='mars'></div>
+      <div class='jupiter'></div>
+      <div class='saturn'></div>
+      <div class='uranus'></div>
+      <div class='neptune'></div>
+      <div class='pluto'></div>
+      <div class='asteroids-belt'></div>
+    </div>
+    <div class="overlay" id="overlay">
+      <button class="button-sytems" onclick="SolarMusic();" id="toggleButton">Xem Hệ Mặt Trời</button>
+    </div>
+    <audio src="//files.catbox.moe/ac1ekl.mp3"></audio>
+    <script>
+      function SolarMusic() {
+        const audio = document.querySelector("audio");
+        audio.volume = 1;
+        audio.currentTime = 0;
+        audio.play();
+      }
+      const audio = document.querySelector("audio");
+      audio.addEventListener('ended', () => {
+        SolarMusic();
+      });
+
+      const toggleButton = document.getElementById('toggleButton');
+      toggleButton.addEventListener('click', () => {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
